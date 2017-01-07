@@ -1,0 +1,17 @@
+diff -Nurb rtl8723bs_bt-master.orig/Makefile rtl8723bs_bt-master/Makefile
+--- rtl8723bs_bt-master.orig/Makefile	2016-07-17 23:47:52.000000000 +0000
++++ rtl8723bs_bt-master/Makefile	2017-01-07 23:55:09.774147563 +0000
+@@ -1,3 +1,5 @@
++PREFIX?=
++
+ rtk_hciattach:hciattach.c hciattach_rtk.o  
+ 	cc -o rtk_hciattach hciattach.c hciattach_rtk.o  
+ 
+@@ -8,5 +10,5 @@
+ 	rm -f *.o  rtk_hciattach
+ 
+ install:
+-	mkdir -p /lib/firmware/rtl_bt
+-	cp -p rtlbt_* /lib/firmware/rtl_bt/.
++	mkdir -p $(PREFIX)/lib/firmware/rtl_bt
++	cp -p rtlbt_* $(PREFIX)/lib/firmware/rtl_bt/.
